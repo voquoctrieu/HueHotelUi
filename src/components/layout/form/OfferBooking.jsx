@@ -51,6 +51,12 @@ function OfferBooking() {
     }));
   };
 
+  // Tính tổng tiền dự kiến
+  const totalPrice = rooms.reduce((sum, room, idx) => {
+    const priceAfterDiscount = room.price * (1 - room.sale / 100);
+    return sum + priceAfterDiscount * roomCounts[idx];
+  }, 0);
+
   return (
     <Box sx={{ maxWidth: '900px', margin: 'auto', p: 3 }}>
       <TableContainer component={Paper} sx={{ mb: 4 }}>
@@ -99,6 +105,15 @@ function OfferBooking() {
           </TableBody>
         </Table>
       </TableContainer>
+      {/* Tổng tiền dự kiến */}
+      <Box sx={{ mb: 3, textAlign: 'right' }}>
+        <Typography variant="h6" color="primary">
+          Tổng tiền dự kiến: <span style={{ fontWeight: 700 }}>{totalPrice.toLocaleString()}K VNĐ</span>
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          (Đã áp dụng giảm giá từng loại phòng)
+        </Typography>
+      </Box>
 
       <Box sx={{ maxWidth: '900px', margin: 'auto', p: 3 }}>
         <Box
