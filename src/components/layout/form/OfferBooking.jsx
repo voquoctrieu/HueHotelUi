@@ -18,11 +18,11 @@ import {
 } from '@mui/material';
 
 const rooms = [
-  { name: 'Phòng Đơn', price: 30, people: 2, sale: 23 },
-  { name: 'Phòng Đôi/1Giường', price: 40, people: 2, sale: 25 },
-  { name: 'Phòng Đôi/2Giường', price: 50, people: 2, sale: 45 },
-  { name: 'Phòng 3 người', price: 90, people: 3, sale: 30 },
-  { name: 'Phòng Gia đình', price: 60, people: 4, sale: 25 },
+  { name: 'Phòng Đơn', price: 290, people: 2, sale: 23 },
+  { name: 'Phòng Đôi/1Giường', price: 400, people: 2, sale: 25 },
+  { name: 'Phòng Đôi/2Giường', price: 420, people: 2, sale: 45 },
+  { name: 'Phòng 3 người', price: 500, people: 3, sale: 30 },
+  { name: 'Phòng Gia đình', price: 700, people: 4, sale: 25 },
 ];
 
 function OfferBooking() {
