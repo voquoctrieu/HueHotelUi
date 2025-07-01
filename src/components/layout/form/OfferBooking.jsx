@@ -168,7 +168,7 @@ function OfferBooking() {
           />
 
           <Button variant='contained' color='primary'>
-            Send
+            Xác nhận đặt phòng
           </Button>
         </Box>
       </Box>
