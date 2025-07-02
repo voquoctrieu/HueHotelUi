@@ -84,7 +84,7 @@ function OfferBooking() {
             {rooms.map((room, index) => (
               <TableRow key={room.name}>
                 <TableCell align='center'>{room.name}</TableCell>
-                <TableCell align='center'>{room.price}K VNĐ</TableCell>
+                <TableCell align='center'>{room.price.toLocaleString()} VNĐ</TableCell>
                 <TableCell align='center'>{room.people}</TableCell>
                 <TableCell align='center'>{room.sale} %</TableCell>
                 <TableCell align='center'>
@@ -108,7 +108,7 @@ function OfferBooking() {
       {/* Tổng tiền dự kiến */}
       <Box sx={{ mb: 3, textAlign: 'right' }}>
         <Typography variant="h6" color="primary">
-          Tổng tiền dự kiến: <span style={{ fontWeight: 700 }}>{totalPrice.toLocaleString()}K VNĐ</span>
+          Tổng tiền dự kiến: <span style={{ fontWeight: 700 }}>{totalPrice.toLocaleString()} VNĐ</span>
         </Typography>
         <Typography variant="body2" color="text.secondary">
           (Đã áp dụng giảm giá từng loại phòng)
