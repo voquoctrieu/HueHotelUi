@@ -12,8 +12,10 @@ import Don from '../../../assets/img/don.jpg';
 import Doi2giuong from '../../../assets/img/doi2giuong.jpg';
 import Banguoi from '../../../assets/img/3nguoi.jpg';
 import Bonnguoi from '../../../assets/img/4nguoi.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function Contact() {
+  const navigate = useNavigate();
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -165,6 +167,7 @@ function Contact() {
                   borderBottom: '1px solid black',
                   borderRadius: '0',
                 }}
+                onClick={() => navigate('/rooms')}
               >
                 <Typography>Xem Tất Cả Các Phòng</Typography>
                 <ChevronRightIcon />
