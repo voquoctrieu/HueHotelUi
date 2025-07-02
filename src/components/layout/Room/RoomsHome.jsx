@@ -10,7 +10,10 @@ import Don from '../../../assets/img/don.jpg';
 import Doi2giuong from '../../../assets/img/doi2giuong.jpg';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import RoomProduct from '../../ui/product/Product';
+import { useNavigate } from 'react-router-dom';
+
 function Contact() {
+  const navigate = useNavigate();
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -131,21 +134,16 @@ function Contact() {
                   peopleCount={'2 Người'}
                 />
               </Carousel>
-              <Button
-                sx={{
-                  width: '208px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'black',
-                  margin: '20px auto',
-                  borderBottom: '1px solid black',
-                  borderRadius: '0',
-                }}
-              >
-                <Typography>Xem Tất Cả Các Phòng</Typography>
-                <ChevronRightIcon />
-              </Button>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+                <Button
+                  variant="outlined"
+                  sx={{ minWidth: 200, fontWeight: 600, fontSize: 18 }}
+                  onClick={() => navigate('/rooms')}
+                >
+                  Xem Tất Cả Các Phòng
+                  <ChevronRightIcon />
+                </Button>
+              </Box>
             </Box>
           </Grid>
         </Grid>
