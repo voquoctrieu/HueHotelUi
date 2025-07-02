@@ -15,7 +15,10 @@ import WifiIcon from '@mui/icons-material/Wifi';
 import GroupsIcon from '@mui/icons-material/Groups';
 import FitScreenIcon from '@mui/icons-material/FitScreen';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
+import { useParams } from 'react-router-dom';
+
 function Detail() {
+  const { roomType } = useParams();
   const style1 = {
     flex: '0 0 40%',
   };
@@ -27,6 +30,57 @@ function Detail() {
       cursor: 'pointer',
     },
   };
+
+  // Dữ liệu chi tiết các loại phòng
+  const roomDetails = {
+    don: {
+      name: 'PHÒNG ĐƠN',
+      price: 'Từ 290.000/Đêm',
+      bed: '1 Giường Đơn',
+      people: '1 Người',
+      size: '35m²',
+      view: 'Hướng ra vườn',
+      desc: 'Tận hưởng sự thoải mái tối đa trong 18 phòng nghỉ tại trung tâm thành phố Huế. Được thiết kế theo phong cách Tân Cổ Điển, không gian mang hơi thở nhẹ nhàng và thanh lịch, vừa hiện đại vừa đậm chất hoài niệm của vùng đất kinh kỳ. Phòng có diện tích rộng 35m², bố trí thông minh với không gian ấm cúng, cùng 3 cặp phòng nối liền thích hợp cho gia đình hoặc nhóm bạn. Màu sắc chủ đạo là tông sáng nhẹ, kết hợp hài hòa với nội thất uốn lượn mềm mại, tạo cảm giác thư thái và sang trọng.'
+    },
+    doi1giuong: {
+      name: 'PHÒNG ĐÔI/1 GIƯỜNG',
+      price: 'Từ 400.000/Đêm',
+      bed: '1 Giường Đôi',
+      people: '2 Người',
+      size: '40m²',
+      view: 'Hướng ra vườn',
+      desc: 'Tận hưởng sự thoải mái tối đa trong không gian rộng rãi, phù hợp cho 2 người tại trung tâm thành phố Huế. Phòng được thiết kế theo phong cách Tân Cổ Điển, vừa hiện đại vừa đậm chất hoài niệm cố đô. Diện tích 40m² cùng 1 giường đôi lớn, nội thất ấm cúng, tiện nghi, màu sắc trang nhã, tạo cảm giác thư thái và lãng mạn. Thích hợp cho các cặp đôi, bạn bè hoặc du khách muốn tận hưởng sự yên tĩnh và tiện nghi.'
+    },
+    doi2giuong: {
+      name: 'PHÒNG ĐÔI/2 GIƯỜNG',
+      price: 'Từ 420.000/Đêm',
+      bed: '2 Giường Đơn',
+      people: '2 Người',
+      size: '45m²',
+      view: 'Hướng ra vườn',
+      desc: 'Tận hưởng sự thoải mái tuyệt vời trong căn phòng có thiết kế hiện đại và tiện nghi, phù hợp cho 2 người. Với diện tích rộng 45m², phòng được bố trí 2 giường đơn riêng biệt, tạo sự riêng tư và thoải mái cho các cặp bạn bè, đồng nghiệp hoặc khách du lịch. Không gian thoáng mát, nội thất sang trọng, ánh sáng tự nhiên hài hòa, mang lại cảm giác thư giãn như ở nhà. Phòng hướng ra vườn, giúp bạn dễ dàng tận hưởng không khí trong lành của thành phố Huế mộng mơ.'
+    },
+    ba: {
+      name: 'PHÒNG 3 NGƯỜI',
+      price: 'Từ 500.000/Đêm',
+      bed: '3 Giường Đơn',
+      people: '3 Người',
+      size: '50m²',
+      view: 'Hướng ra vườn / thành phố',
+      desc: 'Phòng 3 người được thiết kế rộng rãi với diện tích 50m², phù hợp cho nhóm bạn hoặc gia đình nhỏ. Trang bị 3 giường đơn riêng biệt, bố trí hợp lý để đảm bảo sự thoải mái và riêng tư cho từng người. Phòng sử dụng gam màu tươi sáng, nội thất hiện đại và tiện nghi, kết hợp với ánh sáng tự nhiên từ cửa sổ lớn. Không gian mang lại cảm giác thư giãn, dễ chịu, thích hợp cho cả nghỉ dưỡng và công tác tại trung tâm thành phố Huế.'
+    },
+    giadinh: {
+      name: 'PHÒNG GIA ĐÌNH',
+      price: 'Từ 700.000/Đêm',
+      bed: '2 Giường Đôi',
+      people: '4 Người',
+      size: '58m²',
+      view: 'Hướng ra vườn / thành phố',
+      desc: 'Phòng Gia Đình là lựa chọn lý tưởng cho nhóm bạn hoặc gia đình từ 3–4 người. Với diện tích rộng 58m², phòng được bố trí 2 giường đôi cỡ lớn, không gian sinh hoạt chung thoải mái, nội thất hiện đại và tinh tế. Ánh sáng tự nhiên tràn ngập qua khung cửa sổ lớn, kết hợp với thiết kế mở và tiện nghi cao cấp, tạo nên trải nghiệm lưu trú tiện nghi như ở nhà. Phòng hướng ra vườn hoặc thành phố, mang lại cảm giác thoáng đãng và thư giãn giữa lòng Huế cổ kính.'
+    }
+  };
+  const detail = roomDetails[roomType] || roomDetails['don'];
+
   return (
     <Box
       sx={{
@@ -61,7 +115,7 @@ function Detail() {
           >
             <Box>
               <Typography variant='h3' fontFamily='THCartoon9'>
-                Phong Don
+                {detail.name}
               </Typography>
               <Typography variant='h6'>Dac diem phong</Typography>
             </Box>
@@ -92,13 +146,13 @@ function Detail() {
                     fontWeight: 'bold',
                   }}
                 >
-                  330k/Dem
+                  {detail.price}
                 </Typography>
               </Box>
               <Typography
                 sx={{ color: 'red', fontSize: '30px', fontWeight: 'bold' }}
               >
-                280k/Dem{' '}
+                {detail.price}
               </Typography>
             </Box>
           </Box>
@@ -109,28 +163,28 @@ function Detail() {
               <FacilitiesDetail
                 img={HotelIcon}
                 title={'Giường'}
-                description={'1 Giường Đơn'}
+                description={detail.bed}
               />
             </Box>
             <Box sx={style1}>
               <FacilitiesDetail
                 img={GroupsIcon}
                 title={'Số người'}
-                description={'1 Người'}
+                description={detail.people}
               />
             </Box>
             <Box sx={style1}>
               <FacilitiesDetail
                 img={FitScreenIcon}
                 title={'Kích thước'}
-                description={'35m'}
+                description={detail.size}
               />
             </Box>
             <Box sx={style1}>
               <FacilitiesDetail
                 img={LocationCityIcon}
                 title={'Tầm Nhìn'}
-                description={'Hướng ra vườn'}
+                description={detail.view}
               />
             </Box>
           </Box>
@@ -138,14 +192,7 @@ function Detail() {
             <Typography
               sx={{ fontSize: '18px', textAlign: 'justify', m: '0 auto' }}
             >
-              Tận hưởng sự thoải mái tối đa trong 18 phòng nghỉ tại trung tâm
-              thành phố Huế. Được thiết kế theo phong cách Tân Cổ Điển, không
-              gian mang hơi thở nhẹ nhàng và thanh lịch, vừa hiện đại vừa đậm
-              chất hoài niệm của vùng đất kinh kỳ.Phòng có diện tích rộng 35m²,
-              bố trí thông minh với không gian ấm cúng, cùng 3 cặp phòng nối
-              liền thích hợp cho gia đình hoặc nhóm bạn. Màu sắc chủ đạo là tông
-              sáng nhẹ, kết hợp hài hòa với nội thất uốn lượn mềm mại, tạo cảm
-              giác thư thái và sang trọng.
+              {detail.desc}
             </Typography>
           </Box>
           <Box sx={{ m: '20px 0' }}>
