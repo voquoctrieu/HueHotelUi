@@ -84,7 +84,7 @@ function OfferBooking() {
             {rooms.map((room, index) => (
               <TableRow key={room.name}>
                 <TableCell align='center'>{room.name}</TableCell>
-                <TableCell align='center'>{room.price.toLocaleString()} VNĐ</TableCell>
+                <TableCell align='center'>{(room.price * 1000).toLocaleString()} VNĐ</TableCell>
                 <TableCell align='center'>{room.people}</TableCell>
                 <TableCell align='center'>{room.sale} %</TableCell>
                 <TableCell align='center'>

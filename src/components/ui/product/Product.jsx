@@ -60,7 +60,7 @@ function Product({ img, sale, price, titleRoom, bedCount, peopleCount }) {
             display: 'flex',
           }}
         >
-          {price.toLocaleString()} VNĐ
+          {(price * 1000).toLocaleString()} VNĐ
           <Typography sx={{ fontWeight: 'light' }}>/ Đêm</Typography>
         </Typography>
       </Box>
