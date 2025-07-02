@@ -2,7 +2,9 @@ import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import SideBar from '../../../assets/img/hoa.jpg';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { useNavigate } from 'react-router-dom';
 function SidebarHome() {
+  const navigate = useNavigate();
   return (
     <Box sx={{ display: 'flex', width: '80%' ,mb:'50px'}}>
       <Box sx={{ mt: '120px' }}>
@@ -48,6 +50,7 @@ function SidebarHome() {
             borderRadius:'0',
             ml:'150px'
           }}
+          onClick={() => navigate('/aboutUs')}
         >
           <Typography sx={{ textDecoration: 'none', color: 'black' }}>
             Xem thêm về chúng tôi
