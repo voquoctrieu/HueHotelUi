@@ -19,6 +19,12 @@ function Product({ img, sale, price, titleRoom, bedCount, peopleCount }) {
         userSelect: 'none',
         background: 'white',
         overflow: 'hidden',
+        transition: 'transform 0.2s, box-shadow 0.2s',
+        boxShadow: 2,
+        '&:hover': {
+          transform: 'scale(1.04)',
+          boxShadow: 8,
+        },
       }}
     >
       <img

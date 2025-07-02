@@ -6,11 +6,77 @@ import Don from '../../../assets/img/don.jpg';
 import Doi2giuong from '../../../assets/img/doi2giuong.jpg';
 import Product from '../../ui/product/Product';
 import Hoa from '../../../assets/img/hoa.jpg';
+
 function RoomsProduct() {
   const styleProduct = {
     flex: '0 0 25%',
     p: '0px',
   };
+
+  // Danh sách phòng mẫu
+  const rooms = [
+    {
+      img: Hoa,
+      sale: 30,
+      price: 290,
+      titleRoom: 'Phòng Đơn',
+      bedCount: '1 Giường Đơn',
+      peopleCount: 1,
+      type: 'don',
+    },
+    {
+      img: Don,
+      sale: 30,
+      price: 400,
+      titleRoom: 'Phòng Đôi/1Giường',
+      bedCount: '1 Giường Đôi',
+      peopleCount: 2,
+      type: 'doi',
+    },
+    {
+      img: Doi2giuong,
+      sale: 30,
+      price: 420,
+      titleRoom: 'Phòng Đôi/2Giường',
+      bedCount: '2 Giường Đơn',
+      peopleCount: 2,
+      type: 'doi',
+    },
+    {
+      img: Banguoi,
+      sale: 30,
+      price: 500,
+      titleRoom: 'Phòng 3 Người',
+      bedCount: '3 Giường Đơn',
+      peopleCount: 4,
+      type: 'ba',
+    },
+    {
+      img: Bonnguoi,
+      sale: 30,
+      price: 700,
+      titleRoom: 'Phòng Gia Đình',
+      bedCount: '2 Giường Đôi',
+      peopleCount: 4,
+      type: 'giadinh',
+    },
+  ];
+
+  // State filter
+  const [filter, setFilter] = React.useState({
+    price: '',
+    people: '',
+    type: '',
+  });
+
+  // Lọc phòng
+  const filteredRooms = rooms.filter(room => {
+    const matchPrice = filter.price ? room.price <= parseInt(filter.price) : true;
+    const matchPeople = filter.people ? room.peopleCount === parseInt(filter.people) : true;
+    const matchType = filter.type ? room.type === filter.type : true;
+    return matchPrice && matchPeople && matchType;
+  });
+
   return (
     <Box
       sx={{
@@ -44,6 +110,27 @@ function RoomsProduct() {
           cố đô.
         </Typography>
       </Box>
+      <Box sx={{ display: 'flex', gap: 2, mb: 3, justifyContent: 'center' }}>
+        <select value={filter.price} onChange={e => setFilter(f => ({ ...f, price: e.target.value }))} style={{ padding: 8, borderRadius: 6 }}>
+          <option value=''>Tất cả giá</option>
+          <option value='400'>Dưới 400.000 VNĐ</option>
+          <option value='500'>Dưới 500.000 VNĐ</option>
+          <option value='700'>Dưới 700.000 VNĐ</option>
+        </select>
+        <select value={filter.people} onChange={e => setFilter(f => ({ ...f, people: e.target.value }))} style={{ padding: 8, borderRadius: 6 }}>
+          <option value=''>Tất cả số người</option>
+          <option value='1'>1 Người</option>
+          <option value='2'>2 Người</option>
+          <option value='4'>4 Người</option>
+        </select>
+        <select value={filter.type} onChange={e => setFilter(f => ({ ...f, type: e.target.value }))} style={{ padding: 8, borderRadius: 6 }}>
+          <option value=''>Tất cả loại phòng</option>
+          <option value='don'>Phòng Đơn</option>
+          <option value='doi'>Phòng Đôi</option>
+          <option value='ba'>Phòng 3 Người</option>
+          <option value='giadinh'>Phòng Gia Đình</option>
+        </select>
+      </Box>
       <Box
         sx={{
           display: 'flex',
@@ -52,56 +139,18 @@ function RoomsProduct() {
           justifyContent: 'center',
         }}
       >
-        <Box sx={styleProduct}>
-          <Product
-            img={Hoa}
-            sale={30}
-            price={290}
-            titleRoom={'Phòng Đơn'}
-            bedCount={'1 Giường Đơn'}
-            peopleCount={'1 Người'}
-          />
-        </Box>
-        <Box sx={styleProduct}>
-          <Product
-            img={Don}
-            sale={30}
-            price={400}
-            titleRoom={'Phòng Đôi/1Giường'}
-            bedCount={'1 Giường Đôi'}
-            peopleCount={'2 Người'}
-          />
-        </Box>
-        <Box sx={styleProduct}>
-          <Product
-            img={Doi2giuong}
-            sale={30}
-            price={420}
-            titleRoom={'Phòng Đôi/2Giường'}
-            bedCount={'2 Giường Đơn'}
-            peopleCount={'2 Người'}
-          />
-        </Box>
-        <Box sx={styleProduct}>
-          <Product
-            img={Banguoi}
-            sale={30}
-            price={500}
-            titleRoom={'Phòng 3 Người'}
-            bedCount={'3 Giường Đơn'}
-            peopleCount={'4 Người'}
-          />
-        </Box>
-        <Box sx={styleProduct}>
-          <Product
-            img={Bonnguoi}
-            sale={30}
-            price={700}
-            titleRoom={'Phòng Gia Đình'}
-            bedCount={'2 Giường Đôi'}
-            peopleCount={'4 Người'}
-          />
-        </Box>
+        {filteredRooms.map((room, idx) => (
+          <Box sx={styleProduct} key={idx}>
+            <Product
+              img={room.img}
+              sale={room.sale}
+              price={room.price}
+              titleRoom={room.titleRoom}
+              bedCount={room.bedCount}
+              peopleCount={room.peopleCount + ' Người'}
+            />
+          </Box>
+        ))}
       </Box>
 
       <Box
