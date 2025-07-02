@@ -10,8 +10,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import RoomProduct from '../../ui/product/Product';
 import Don from '../../../assets/img/don.jpg';
 import Doi2giuong from '../../../assets/img/doi2giuong.jpg';
-import Banguoi from '../../../assets/img/banguoi.jpg';
-import Bonnguoi from '../../../assets/img/bonnguoi.jpg';
+import Banguoi from '../../../assets/img/3nguoi.jpg';
+import Bonnguoi from '../../../assets/img/4nguoi.jpg';
 
 function Contact() {
   const responsive = {
