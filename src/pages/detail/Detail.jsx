@@ -35,7 +35,8 @@ function Detail() {
   const roomDetails = {
     don: {
       name: 'PHÒNG ĐƠN',
-      price: 'Từ 290.000/Đêm',
+      originalPrice: '330.000',
+      price: '290.000',
       bed: '1 Giường Đơn',
       people: '1 Người',
       size: '35m²',
@@ -44,7 +45,8 @@ function Detail() {
     },
     doi1giuong: {
       name: 'PHÒNG ĐÔI/1 GIƯỜNG',
-      price: 'Từ 400.000/Đêm',
+      originalPrice: '450.000',
+      price: '400.000',
       bed: '1 Giường Đôi',
       people: '2 Người',
       size: '40m²',
@@ -53,7 +55,8 @@ function Detail() {
     },
     doi2giuong: {
       name: 'PHÒNG ĐÔI/2 GIƯỜNG',
-      price: 'Từ 420.000/Đêm',
+      originalPrice: '480.000',
+      price: '420.000',
       bed: '2 Giường Đơn',
       people: '2 Người',
       size: '45m²',
@@ -62,7 +65,8 @@ function Detail() {
     },
     ba: {
       name: 'PHÒNG 3 NGƯỜI',
-      price: 'Từ 500.000/Đêm',
+      originalPrice: '550.000',
+      price: '500.000',
       bed: '3 Giường Đơn',
       people: '3 Người',
       size: '50m²',
@@ -71,7 +75,8 @@ function Detail() {
     },
     giadinh: {
       name: 'PHÒNG GIA ĐÌNH',
-      price: 'Từ 700.000/Đêm',
+      originalPrice: '800.000',
+      price: '700.000',
       bed: '2 Giường Đôi',
       people: '4 Người',
       size: '58m²',
@@ -120,39 +125,9 @@ function Detail() {
               <Typography variant='h6'>Dac diem phong</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  gap: 1,
-                  color: 'black',
-                  fontSize: '30px',
-                  fontWeight: 'bold',
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: 'black',
-                    fontSize: '30px',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  Tu
-                </Typography>
-                <Typography
-                  sx={{
-                    textDecoration: 'line-through',
-                    fontSize: '30px',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {detail.price}
-                </Typography>
-              </Box>
-              <Typography
-                sx={{ color: 'red', fontSize: '30px', fontWeight: 'bold' }}
-              >
-                {detail.price}
+              <Typography sx={{ fontSize: '30px', fontWeight: 'bold' }}>
+                Từ <span style={{textDecoration: 'line-through'}}>{detail.originalPrice}/Đêm</span>
+                <span style={{color: 'red', fontWeight: 700, fontSize: 30, marginLeft: 8}}>{detail.price}/Đêm</span>
               </Typography>
             </Box>
           </Box>
