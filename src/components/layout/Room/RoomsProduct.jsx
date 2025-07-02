@@ -148,7 +148,7 @@ function RoomsProduct() {
               titleRoom={room.titleRoom}
               bedCount={room.bedCount}
               peopleCount={room.peopleCount + ' Người'}
-              roomType={room.type}
+              roomType={room.type || 'don'}
             />
           </Box>
         ))}
