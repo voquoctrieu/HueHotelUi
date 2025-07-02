@@ -103,7 +103,6 @@ function Product({ img, sale, price, titleRoom, bedCount, peopleCount, roomType 
             color: 'black',
             m: '20px 0 0 -10px',
           }}
-          disabled={!roomType}
         >
           <Typography>Chi Tiết</Typography>
           <ChevronRightIcon />
