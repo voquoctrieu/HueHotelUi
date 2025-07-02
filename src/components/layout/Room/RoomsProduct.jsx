@@ -110,20 +110,20 @@ function RoomsProduct() {
           cố đô.
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', gap: 2, mb: 3, justifyContent: 'center' }}>
-        <select value={filter.price} onChange={e => setFilter(f => ({ ...f, price: e.target.value }))} style={{ padding: 8, borderRadius: 6 }}>
+      <Box sx={{ display: 'flex', gap: 4, mb: 5, justifyContent: 'center' }}>
+        <select value={filter.price} onChange={e => setFilter(f => ({ ...f, price: e.target.value }))} style={{ padding: '16px 32px', borderRadius: 10, fontSize: 20, minWidth: 220, border: '2px solid #1976d2', fontWeight: 600, color: '#1976d2', background: '#f5faff', boxShadow: '0 2px 8px #1976d233' }}>
           <option value=''>Tất cả giá</option>
           <option value='400'>Dưới 400.000 VNĐ</option>
           <option value='500'>Dưới 500.000 VNĐ</option>
           <option value='700'>Dưới 700.000 VNĐ</option>
         </select>
-        <select value={filter.people} onChange={e => setFilter(f => ({ ...f, people: e.target.value }))} style={{ padding: 8, borderRadius: 6 }}>
+        <select value={filter.people} onChange={e => setFilter(f => ({ ...f, people: e.target.value }))} style={{ padding: '16px 32px', borderRadius: 10, fontSize: 20, minWidth: 220, border: '2px solid #1976d2', fontWeight: 600, color: '#1976d2', background: '#f5faff', boxShadow: '0 2px 8px #1976d233' }}>
           <option value=''>Tất cả số người</option>
           <option value='1'>1 Người</option>
           <option value='2'>2 Người</option>
           <option value='4'>4 Người</option>
         </select>
-        <select value={filter.type} onChange={e => setFilter(f => ({ ...f, type: e.target.value }))} style={{ padding: 8, borderRadius: 6 }}>
+        <select value={filter.type} onChange={e => setFilter(f => ({ ...f, type: e.target.value }))} style={{ padding: '16px 32px', borderRadius: 10, fontSize: 20, minWidth: 220, border: '2px solid #1976d2', fontWeight: 600, color: '#1976d2', background: '#f5faff', boxShadow: '0 2px 8px #1976d233' }}>
           <option value=''>Tất cả loại phòng</option>
           <option value='don'>Phòng Đơn</option>
           <option value='doi'>Phòng Đôi</option>
