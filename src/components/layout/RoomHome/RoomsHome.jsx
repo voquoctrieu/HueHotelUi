@@ -8,6 +8,10 @@ import LocalHotelIcon from '@mui/icons-material/LocalHotel';
 import GroupsIcon from '@mui/icons-material/Groups';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import RoomProduct from '../../ui/product/Product';
+import Don from '../../../assets/img/don.jpg';
+import Doi2giuong from '../../../assets/img/doi2giuong.jpg';
+import Banguoi from '../../../assets/img/banguoi.jpg';
+import Bonnguoi from '../../../assets/img/bonnguoi.jpg';
 
 function Contact() {
   const responsive = {
@@ -41,7 +45,7 @@ function Contact() {
       type: 'don',
     },
     {
-      img: Hoa,
+      img: Don,
       sale: 30,
       price: 400,
       titleRoom: 'Phòng Đôi/1Giường',
@@ -50,7 +54,7 @@ function Contact() {
       type: 'doi1giuong',
     },
     {
-      img: Hoa,
+      img: Doi2giuong,
       sale: 30,
       price: 420,
       titleRoom: 'Phòng Đôi/2Giường',
@@ -59,7 +63,7 @@ function Contact() {
       type: 'doi2giuong',
     },
     {
-      img: Hoa,
+      img: Banguoi,
       sale: 30,
       price: 500,
       titleRoom: 'Phòng 3 Người',
@@ -68,7 +72,7 @@ function Contact() {
       type: 'ba',
     },
     {
-      img: Hoa,
+      img: Bonnguoi,
       sale: 30,
       price: 700,
       titleRoom: 'Phòng Gia Đình',
