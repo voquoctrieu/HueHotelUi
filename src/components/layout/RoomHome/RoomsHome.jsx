@@ -8,6 +8,7 @@ import LocalHotelIcon from '@mui/icons-material/LocalHotel';
 import GroupsIcon from '@mui/icons-material/Groups';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import RoomProduct from '../../ui/product/Product';
+
 function Contact() {
   const responsive = {
     superLargeDesktop: {
@@ -27,6 +28,55 @@ function Contact() {
       items: 1,
     },
   };
+
+  // Danh sách phòng mẫu cho Trang Chủ
+  const rooms = [
+    {
+      img: Hoa,
+      sale: 30,
+      price: 290,
+      titleRoom: 'Phòng Đơn',
+      bedCount: '1 Giường Đơn',
+      peopleCount: 1,
+      type: 'don',
+    },
+    {
+      img: Hoa,
+      sale: 30,
+      price: 400,
+      titleRoom: 'Phòng Đôi/1Giường',
+      bedCount: '1 Giường Đôi',
+      peopleCount: 2,
+      type: 'doi1giuong',
+    },
+    {
+      img: Hoa,
+      sale: 30,
+      price: 420,
+      titleRoom: 'Phòng Đôi/2Giường',
+      bedCount: '2 Giường Đơn',
+      peopleCount: 2,
+      type: 'doi2giuong',
+    },
+    {
+      img: Hoa,
+      sale: 30,
+      price: 500,
+      titleRoom: 'Phòng 3 Người',
+      bedCount: '3 Giường Đơn',
+      peopleCount: 3,
+      type: 'ba',
+    },
+    {
+      img: Hoa,
+      sale: 30,
+      price: 700,
+      titleRoom: 'Phòng Gia Đình',
+      bedCount: '2 Giường Đôi',
+      peopleCount: 4,
+      type: 'giadinh',
+    },
+  ];
 
   return (
     <Box
@@ -87,47 +137,18 @@ function Contact() {
                 containerClass='carousel-container'
                 itemClass='carousel-item-padding-40-px carousel-item-padding'
               >
-                {/* RoomProduct(img, sale, price,titleRoom,bedCount,peopleCount) */}
-                <RoomProduct
-                  img={Hoa}
-                  sale={30}
-                  price={320}
-                  titleRoom={'Phòng Gia Đình'}
-                  bedCount={'2 Giường Đôi'}
-                  peopleCount={'4 Người'}
-                />
-                <RoomProduct
-                  img={Hoa}
-                  sale={30}
-                  price={320}
-                  titleRoom={'Phòng Gia Đình'}
-                  bedCount={'2 Giường Đôi'}
-                  peopleCount={'4 Người'}
-                />
-                <RoomProduct
-                  img={Hoa}
-                  sale={30}
-                  price={320}
-                  titleRoom={'Phòng Gia Đình'}
-                  bedCount={'2 Giường Đôi'}
-                  peopleCount={'4 Người'}
-                />
-                <RoomProduct
-                  img={Hoa}
-                  sale={30}
-                  price={320}
-                  titleRoom={'Phòng Gia Đình'}
-                  bedCount={'2 Giường Đôi'}
-                  peopleCount={'4 Người'}
-                />
-                <RoomProduct
-                  img={Hoa}
-                  sale={30}
-                  price={320}
-                  titleRoom={'Phòng Gia Đình'}
-                  bedCount={'2 Giường Đôi'}
-                  peopleCount={'4 Người'}
-                />
+                {rooms.map((room, idx) => (
+                  <RoomProduct
+                    key={idx}
+                    img={room.img}
+                    sale={room.sale}
+                    price={room.price}
+                    titleRoom={room.titleRoom}
+                    bedCount={room.bedCount}
+                    peopleCount={room.peopleCount + ' Người'}
+                    roomType={room.type}
+                  />
+                ))}
               </Carousel>
               <Button
                 sx={{
