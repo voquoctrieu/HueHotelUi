@@ -126,7 +126,8 @@ function RoomsProduct() {
         <select value={filter.type} onChange={e => setFilter(f => ({ ...f, type: e.target.value }))} style={{ padding: '16px 32px', borderRadius: 10, fontSize: 20, minWidth: 220, border: '2px solid #1976d2', fontWeight: 600, color: '#1976d2', background: '#f5faff', boxShadow: '0 2px 8px #1976d233' }}>
           <option value=''>Tất cả loại phòng</option>
           <option value='don'>Phòng Đơn</option>
-          <option value='doi'>Phòng Đôi</option>
+          <option value='doi1giuong'>Phòng Đôi/1Giường</option>
+          <option value='doi2giuong'>Phòng Đôi/2Giường</option>
           <option value='ba'>Phòng 3 Người</option>
           <option value='giadinh'>Phòng Gia Đình</option>
         </select>
