@@ -5,7 +5,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom';
 
-function Product({ img, sale, price, titleRoom, bedCount, peopleCount }) {
+function Product({ img, sale, price, titleRoom, bedCount, peopleCount, roomType }) {
   return (
     <Box
       sx={{
@@ -95,7 +95,7 @@ function Product({ img, sale, price, titleRoom, bedCount, peopleCount }) {
 
         <Button
           component={Link}
-          to='/detail'
+          to={`/detail/${roomType}`}
           sx={{
             display: 'flex',
             alignItems: 'center',

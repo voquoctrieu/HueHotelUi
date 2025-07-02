@@ -31,7 +31,7 @@ function RoomsProduct() {
       titleRoom: 'Phòng Đôi/1Giường',
       bedCount: '1 Giường Đôi',
       peopleCount: 2,
-      type: 'doi',
+      type: 'doi1giuong',
     },
     {
       img: Doi2giuong,
@@ -40,7 +40,7 @@ function RoomsProduct() {
       titleRoom: 'Phòng Đôi/2Giường',
       bedCount: '2 Giường Đơn',
       peopleCount: 2,
-      type: 'doi',
+      type: 'doi2giuong',
     },
     {
       img: Banguoi,
@@ -48,7 +48,7 @@ function RoomsProduct() {
       price: 500,
       titleRoom: 'Phòng 3 Người',
       bedCount: '3 Giường Đơn',
-      peopleCount: 4,
+      peopleCount: 3,
       type: 'ba',
     },
     {
@@ -148,6 +148,7 @@ function RoomsProduct() {
               titleRoom={room.titleRoom}
               bedCount={room.bedCount}
               peopleCount={room.peopleCount + ' Người'}
+              roomType={room.type}
             />
           </Box>
         ))}
