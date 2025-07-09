@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
+import Snackbar from '@mui/material/Snackbar';
 
 function BookRoomDetail() {
   const [checkInDate, setCheckInDate] = React.useState(
@@ -14,6 +15,7 @@ function BookRoomDetail() {
   );
   const [adults, setAdults] = React.useState(1);
   const [children, setChildren] = React.useState(0);
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
   const handleAdultsChange = (event) => {
     setAdults(event.target.value);
@@ -121,6 +123,8 @@ function BookRoomDetail() {
             backgroundColor: 'transparent',
             border: '2px solid black',
           }}
+          type="button"
+          onClick={() => setOpenSnackbar(true)}
         >
           <Typography
             sx={{ color: 'black', fontSize: '20px', fontWeight: 'bold' }}
@@ -128,6 +132,13 @@ function BookRoomDetail() {
           Đặt Ngay
           </Typography>
         </Button>
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={3000}
+          onClose={() => setOpenSnackbar(false)}
+          message="Đặt phòng thành công!"
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        />
       </Box>
     </Box>
   );
