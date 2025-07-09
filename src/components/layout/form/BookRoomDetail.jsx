@@ -136,8 +136,8 @@ function BookRoomDetail() {
           open={openSnackbar}
           autoHideDuration={3000}
           onClose={() => setOpenSnackbar(false)}
-          message="Đặt phòng thành công!"
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          message="Bạn đã đặt Phòng thành Công."
+          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         />
       </Box>
     </Box>
