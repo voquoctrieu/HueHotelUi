@@ -16,6 +16,7 @@ import {
   TableRow,
   Paper,
 } from '@mui/material';
+import Snackbar from '@mui/material/Snackbar';
 
 const rooms = [
   { name: 'Phòng Đơn', price: 290, people: 2, sale: 23 },
@@ -36,6 +37,7 @@ function OfferBooking() {
     message: '',
     agree: false,
   });
+  const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleRoomChange = (index, value) => {
     const updatedCounts = [...roomCounts];
@@ -182,9 +184,16 @@ function OfferBooking() {
             }
           />
 
-          <Button variant='contained' color='primary'>
+          <Button variant='contained' color='primary' type="button" onClick={() => setOpenSnackbar(true)}>
             Xác nhận đặt phòng
           </Button>
+          <Snackbar
+            open={openSnackbar}
+            autoHideDuration={3000}
+            onClose={() => setOpenSnackbar(false)}
+            message="Bạn đã đặt Phòng thành Công."
+            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+          />
         </Box>
       </Box>
     </Box>
