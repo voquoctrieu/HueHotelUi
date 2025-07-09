@@ -2,6 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
+import Snackbar from '@mui/material/Snackbar';
 
 function BookingRoomForm() {
   const [checkInDate, setCheckInDate] = React.useState(
@@ -14,6 +15,7 @@ function BookingRoomForm() {
   );
   const [adults, setAdults] = React.useState(1);
   const [children, setChildren] = React.useState(0);
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
   const handleAdultsChange = (event) => {
     setAdults(event.target.value);
@@ -159,6 +161,18 @@ function BookingRoomForm() {
           Xem bản đồ lớn hơn
         </a>
       </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+        <Button variant="contained" color="primary" onClick={() => setOpenSnackbar(true)}>
+          Xác nhận đặt phòng
+        </Button>
+      </Box>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={() => setOpenSnackbar(false)}
+        message="Đặt phòng thành công!"
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      />
     </Box>
   );
 }

@@ -31,7 +31,7 @@ function Detail() {
     },
   };
 
-  // Dữ liệu chi tiết các loại phòng
+  
   const roomDetails = {
     don: {
       name: 'PHÒNG ĐƠN',
@@ -110,26 +110,21 @@ function Detail() {
         >
           <Box
             sx={{
-              height: '100px',
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
               borderBottom: '1px solid black',
               m: '30px 0 0',
+              pb: 2,
             }}
           >
-            <Box>
-              <Typography variant='h3' fontFamily='THCartoon9'>
-                {detail.name}
-              </Typography>
-              <Typography variant='h6'>Dac diem phong</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2 }}>
-              <Typography sx={{ fontSize: '30px', fontWeight: 'bold' }}>
-                Từ <span style={{textDecoration: 'line-through'}}>{detail.originalPrice}/Đêm</span>
-                <span style={{color: 'red', fontWeight: 700, fontSize: 30, marginLeft: 8}}>{detail.price}/Đêm</span>
-              </Typography>
-            </Box>
+            <Typography variant='h3' fontFamily='THCartoon9'>
+              {detail.name}
+            </Typography>
+            <Box sx={{ width: '100%', borderBottom: '1px solid #ccc', my: 1 }} />
+            <Typography variant='h6' sx={{ mt: 1 }}>
+              Đặc điểm phòng
+            </Typography>
           </Box>
           <Box
             sx={{ display: 'flex', flexWrap: 'wrap', gap: '40px', m: '50px 0' }}
