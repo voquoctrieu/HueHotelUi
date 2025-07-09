@@ -161,18 +161,6 @@ function BookingRoomForm() {
           Xem bản đồ lớn hơn
         </a>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
-        <Button variant="contained" color="primary" type="button" onClick={() => setOpenSnackbar(true)}>
-          Xác nhận đặt phòng
-        </Button>
-      </Box>
-      <Snackbar
-        open={openSnackbar}
-        autoHideDuration={3000}
-        onClose={() => setOpenSnackbar(false)}
-        message="Đặt phòng thành công!"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      />
     </Box>
   );
 }

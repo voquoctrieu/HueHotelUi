@@ -110,13 +110,6 @@ function BookRoomForm() {
             </MenuItem>
           ))}
         </TextField>
-        <Button
-        component={Link}
-        to={'/booking'}
-          sx={{ width: '225px', height: '70px', backgroundColor: '#333',border:'2px solid white' }}
-        >
-          <Typography sx={{color:'white', fontSize:'20px',fontWeight:'bold'}}>ĐẶT NGAY</Typography>
-        </Button>
       </Box>
     </Box>
   );
